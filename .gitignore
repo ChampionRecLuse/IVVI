@@ -1,0 +1,35 @@
+.DS_Store
+.idea/code.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+planning/ebm_rl/.idea/ebm_rl.iml
+planning/ebm_rl/.idea/misc.xml
+planning/ebm_rl/.idea/modules.xml
+planning/ebm_rl/.idea/workspace.xml
+planning/ebm_rl/.idea/inspectionProfiles/profiles_settings.xml
+planning/ebm_rl/tmp
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc
+
+# Compiled C++ files
+*.out
+
+# Application specific files
+venv
+node_modules
+.sass-cache
