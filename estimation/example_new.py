@@ -79,7 +79,7 @@ def generate_action(x,z,e, beta, gamma, delta):
     A function to generate action while collecting data.
     """
 
-    return np.random.normal(beta * x + gamma * z + delta * e, 1)
+    return np.clip(np.random.normal(e , x**2+z**2), -1, 1)
 
 def F(x, a):
 
@@ -92,7 +92,7 @@ def F(x, a):
 
 
 # Data collection
-max_iter = 200
+max_iter = 10000
 beta = -0.1
 gamma = 0.1
 delta = 0.1
@@ -150,16 +150,13 @@ mu_B = np.min(np.linalg.eig(B)[0])
 
 
 # Compute W by using Gradient Descent
-W_0 = np.array([[1,1,1]])  # initial guess
-K_0 = np.array([[1,1]])  # initial guess
-eta_phi = np.zeros(max_iter)
-eta_psi = np.zeros(max_iter)
-# setup for stepsize
-for i in range(len(eta_phi)):
-    eta_phi[i] = 0.5/(1+i)
-    eta_psi[i] = 0.5 * eta_phi[i]
-W_sad = compute_W_sad(phi, psi, eta_phi, eta_psi, x, a, z, xx, max_iter, W_0, K_0)
-print(W_sad)
-
-plt.hist(x)
-plt.show()
+# W_0 = np.array([[0,0,0]])  # initial guess
+# K_0 = np.array([[0,0]])  # initial guess
+# eta_phi = np.zeros(max_iter)
+# eta_psi = np.zeros(max_iter)
+# # setup for stepsize
+# for i in range(len(eta_phi)):
+#     eta_phi[i] = 0.1/(1+i)
+#     eta_psi[i] = 0.5 * eta_phi[i]
+# W_sad = compute_W_sad(phi, psi, eta_phi, eta_psi, x, a, z, xx, max_iter, W_0, K_0)
+# print(W_sad)
