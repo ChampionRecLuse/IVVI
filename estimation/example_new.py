@@ -79,7 +79,7 @@ def generate_action(x,z,e, beta, gamma, delta):
     A function to generate action while collecting data.
     """
 
-    return np.clip(np.random.normal(e , x**2+z**2), -1, 1)
+    return np.clip(np.random.normal(z+e , x**2), -1, 1)
 
 def F(x, a):
 

@@ -31,6 +31,7 @@ def generate_action(x, z, e, beta, gamma, delta):
     return np.random.normal(-beta * x + gamma * z + delta * e, 1)
     # return np.tanh(0.1 * (-x+z+e))
 
+
 def phi(x, a):
 
     """
