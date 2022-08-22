@@ -53,10 +53,6 @@ def eval_policy_episodes(env, policy, n_episodes, step):
       total_rewards += time_step.reward
     results.append(total_rewards)
   results = np.array(results)
-  with open("data.txt", "a") as f:
-      np.savetxt(f, results, newline='\n')
-      f.write(str(step) + '\n')
-      f.close()
 
   return float(np.mean(results)), float(np.std(results))
 
